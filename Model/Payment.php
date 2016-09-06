@@ -621,7 +621,10 @@ use Magento\Payment\Model\InfoInterface;
 	}
 
 	protected function _buildAuthXml($pdata) {
-		$xml  = "
+       foreach($pdata as $key=>$value) {
+            $pdata[$key] = htmlspecialchars($value);
+        }
+        $xml  = "
 <Request>
 	<UserAuth>
 		<companyid>".$pdata['companyid']."</companyid>
@@ -631,8 +634,8 @@ use Magento\Payment\Model\InfoInterface;
 		<osversion>".PHP_OS."</osversion>
 		<productid>".$this->_VerosaProductCode."</productid>
         <version>".$this->_VerosaVersion."</version>
-        <uname>".php_uname()."</uname>
-        <phpversion>".phpversion()."</phpversion>
+        <uname>".htmlspecialchars(php_uname())."</uname>
+        <phpversion>".htmlspecialchars(phpversion())."</phpversion>
 	</UserAuth>
 	<Vault>
 		<vaultaction>37</vaultaction>
@@ -700,6 +703,9 @@ use Magento\Payment\Model\InfoInterface;
 	}
 
 	protected function _buildVoidXML($pdata) {
+        foreach($pdata as $key=>$value) {
+            $pdata[$key] = htmlspecialchars($value);
+        }
 		$xml  = "
 <Request>
 	<UserAuth>
@@ -710,8 +716,8 @@ use Magento\Payment\Model\InfoInterface;
 		<osversion>".PHP_OS."</osversion>
 		<productid>".$this->_VerosaProductCode."</productid>
         <version>".$this->_VerosaVersion."</version>
-        <uname>".php_uname()."</uname>
-        <phpversion>".phpversion()."</phpversion>
+        <uname>".htmlspecialchars(php_uname())."</uname>
+        <phpversion>".htmlspecialchars(phpversion())."</phpversion>
 	</UserAuth>
 	<Vault>
 		<vaultaction>30</vaultaction>
@@ -725,6 +731,9 @@ use Magento\Payment\Model\InfoInterface;
 	}
 
 	protected function _buildRefundXML($pdata) {
+        foreach($pdata as $key=>$value) {
+            $pdata[$key] = htmlspecialchars($value);
+        }
 		$xml  = "
 <Request>
 	<UserAuth>
@@ -735,8 +744,8 @@ use Magento\Payment\Model\InfoInterface;
 		<osversion>".PHP_OS."</osversion>
 		<productid>".$this->_VerosaProductCode."</productid>
         <version>".$this->_VerosaVersion."</version>
-        <uname>".php_uname()."</uname>
-        <phpversion>".phpversion()."</phpversion>
+        <uname>".htmlspecialchars(php_uname())."</uname>
+        <phpversion>".htmlspecialchars(phpversion())."</phpversion>
 	</UserAuth>
 	<Vault>
 		<vaultaction>29</vaultaction>
@@ -752,6 +761,9 @@ use Magento\Payment\Model\InfoInterface;
 	}
 
 	protected function _buildCaptureXML($pdata) {
+        foreach($pdata as $key=>$value) {
+            $pdata[$key] = htmlspecialchars($value);
+        }
 		$xml  = "
 <Request>
 	<UserAuth>
@@ -762,8 +774,8 @@ use Magento\Payment\Model\InfoInterface;
 		<osversion>".PHP_OS."</osversion>
 		<productid>".$this->_VerosaProductCode."</productid>
         <version>".$this->_VerosaVersion."</version>
-        <uname>".php_uname()."</uname>
-        <phpversion>".phpversion()."</phpversion>
+        <uname>".htmlspecialchars(php_uname())."</uname>
+        <phpversion>".htmlspecialchars(phpversion())."</phpversion>
 	</UserAuth>
 	<Vault>
 		<vaultaction>39</vaultaction>
@@ -778,6 +790,9 @@ use Magento\Payment\Model\InfoInterface;
 		return $xml;
 	}
 	protected function _buildSaleXml($pdata) {
+        foreach($pdata as $key=>$value) {
+            $pdata[$key] = htmlspecialchars($value);
+        }
 		$xml  = "
 <Request>
 	<UserAuth>
@@ -788,8 +803,8 @@ use Magento\Payment\Model\InfoInterface;
 		<osversion>".PHP_OS."</osversion>
 		<productid>".$this->_VerosaProductCode."</productid>
         <version>".$this->_VerosaVersion."</version>
-        <uname>".php_uname()."</uname>
-        <phpversion>".phpversion()."</phpversion>
+        <uname>".htmlspecialchars(php_uname())."</uname>
+        <phpversion>".htmlspecialchars(phpversion())."</phpversion>
 	</UserAuth>
 	<Vault>
 		<vaultaction>8</vaultaction>

@@ -1,6 +1,11 @@
 {
 	"name": "Verosa/Pay",
 	"description": "Verosa Payment Module",
+	"type": "magento2-module",
+	"version": "dev-master",
+	"license": [
+		"proprietary"
+	],
     "require": {
         "php": "~5.5.0|~5.6.0|~7.0.0",
         "magento/module-config": "100.0.*",
@@ -19,11 +24,6 @@
     "suggest": {
         "magento/module-checkout-agreements": "100.0.*"
     },
-	"type": "magento2-module",
-	"version": "1.0.0",
-	"license": [
-		"proprietary"
-	],
 	"autoload": {
 		"psr-4": { 
             "Verosa\\Pay\\": "" 
